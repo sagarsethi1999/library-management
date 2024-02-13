@@ -68,13 +68,13 @@ app.post('/borrow', async (req, res) => {
 
   try {
     const borrowedOn = new Date();
-    const returnOn = new Date(borrowedOn.getTime() + 60* 60* 1000); // Add one hour
+    const returnOn = new Date(borrowedOn.getTime() +  60* 60* 1000); 
 
     const book = await Book.create({
       name: bookName,
       borrowedOn: borrowedOn,
       returnOn: returnOn,
-      fine: returnOn.getTime() < Date.now() ? 370 : 0
+      fine: 0
     });
 
     res.json(book);
@@ -112,6 +112,7 @@ app.post('/return', async (req, res) => {
 });
 
 
+
 app.get('/issued-books', async (req, res) => {
   try {
     const issuedBooks = await Book.findAll();
@@ -141,17 +142,20 @@ app.get('/returned-books', async (req, res) => {
 
 
 const updateFines = async () => {
+
+  
+
   try {
     const books = await Book.findAll();
     const now = new Date();
 
     for (const book of books) {
-      if (book.returnOn < now && book.fine === 0) {
+      if (book.returnOn < now ) {
         
         const timeDiff = now - book.returnOn;
         const hoursLate = Math.floor(timeDiff / (1000 * 60 * 60)); 
         const fine = hoursLate * 10; 
-
+       
         
         await Book.update({ fine }, { where: { id: book.id } });
       }
@@ -162,7 +166,7 @@ const updateFines = async () => {
 };
 
 
-setInterval(updateFines,60* 60* 1000); 
+setInterval(updateFines,60*60* 1000); 
 
 
 sequelize

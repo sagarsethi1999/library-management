@@ -5,21 +5,21 @@ Reset default margin and padding
     box-sizing: border-box;
 }
 
-/* Body styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     padding: 20px;
 }
 
-/* Title styles */
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
     font-family:'Times New Roman', Times, serif;
 }
 
-/* Form styles */
+
 form {
     margin-bottom: 20px;
 }
@@ -45,21 +45,21 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Book container styles */
+
 .book-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Add gap between book cards */
-    justify-content: left; /* Center book cards horizontally */
+    gap: 20px; 
+    justify-content: left;
 }
 
-/* Book card styles */
+
 .book-card {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     width: 200px;
-    background-color: #fff;
+    background-color: #fff653;
     transition: box-shadow 0.3s ease;
 }
 
@@ -78,11 +78,10 @@ button[type="submit"]:hover {
 }
 
 .book-card button:hover {
-    background-color: #0056b3;
+    background-color: #14cd3c;
 }
 
-/* Returned books container styles */
-/* Returned book card styles */
+
 .returned-book-card {
     border: 1px solid #ccc;
     background-color: #c6c4c8;
@@ -90,8 +89,8 @@ button[type="submit"]:hover {
     padding: 10px;
     width: 200px;
     transition: box-shadow 0.3s ease;
-    margin-bottom: 20px; /* Add margin bottom to create gap between returned book cards */
-    position: relative; /* Add position relative for absolute positioning */
+    margin-bottom: 20px;
+    position: relative; 
 }
 
 .returned-book-card p {
@@ -113,18 +112,18 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Horizontal line styles */
+
 .returned-book-card:after {
     content: "";
     position: absolute;
-    bottom: -10px; /* Adjust as needed */
+    bottom: -10px; 
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #ccc; /* Color of the horizontal line */
+    background-color: #ccc;
 }
 
-/* Returned books container styles */
+
 #returnedBooks {
     margin-top: 20px;
 }
